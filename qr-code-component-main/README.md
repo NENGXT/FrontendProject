@@ -1,5 +1,3 @@
-这是我为我的项目写的 readme 文档，请帮我整理一下
-
 # Frontend Mentor - QR 码组件解决方案
 
 这是 [Frontend Mentor 上 QR 码组件挑战](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H) 的解决方案。
@@ -61,8 +59,6 @@ body {
 
 ### 未来的改进方向
 
-在本节中，你可以写下你未来想要继续改进的地方。例如：
-
 -   希望进一步学习 CSS Grid 并在下一个项目中尝试使用它。
 -   寻找更多关于动画效果的知识和可用的库，并在下个项目中应用。
 
@@ -71,6 +67,69 @@ body {
 -   [居中元素](https://chokcoco.github.io/CSS-Inspiration/#/./layout/best-way-to-center-element)
 -   [渐变生成器](https://cssgradient.io/gradient-backgrounds/)
 
----
+# Frontend Mentor - QR Code Component Solution
 
-[def]: #概述
+This is my solution for the [QR Code Component Challenge](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H) on Frontend Mentor.
+
+## Table of Contents
+
+-   [Overview](#overview)
+    -   [Screenshots](#screenshots)
+-   [My Development Process](#my-development-process)
+    -   [Technologies Used](#technologies-used)
+    -   [What I Learned](#what-i-learned)
+    -   [Future Improvements](#future-improvements)
+    -   [References](#references)
+
+## Overview
+
+### Screenshots
+
+![Desktop Version](./completed/desktop_done.png)
+![Mobile Version](./completed/moblie_done.jpg)
+
+## My Development Process
+
+### Technologies Used
+
+-   Semantic HTML5 markup
+-   CSS custom properties
+-   Flexbox
+-   Mobile-first design approach
+
+### What I Learned
+
+-   Using the `background` property to create a gradient background:
+
+```css
+body {
+    font-size: 15px;
+    font-family: "Outfit", sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+    display: flex;
+}
+
+•	Using Flexbox to structure content within a parent container and centering the child container with margin: auto:
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.qr-code-container {
+    margin: auto;
+}
+```
+
+### Future Improvements
+
+-   Learn more about CSS Grid and try implementing it in the next project.
+-   Explore more animation techniques and relevant libraries to enhance UI/UX.
+
+### References
+
+-   Best Ways to Center an Element
+-   CSS Gradient Generator
