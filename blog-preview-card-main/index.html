@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png" />
+
+        <title>Frontend Mentor | Blog preview card</title>
+
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <figure class="card-box">
+            <img
+                src="./assets/images/illustration-article.svg"
+                alt="illustra"
+                class="illustra" />
+            <header class="tag">
+                <span class="tag-text">Learning</span>
+                <p class="date">
+                    Published on <span class="yr-mo">10/24/2023</span>
+                </p>
+            </header>
+            <div class="content">
+                <h1 class="title">HTML and CSS: <br />The Complete Guide</h1>
+                <p class="description">
+                    These languages are the backbone of every website, defining
+                    structure, content, andpresentation.
+                </p>
+            </div>
+            <footer class="footer">
+                <img
+                    src="https://img.taotu.cn/ssd/ssd4/1/2024-05-28/1_60b1fb5e525e09826ce25adfa66f63a7.jpg"
+                    alt="user icon"
+                    class="user-icon" />
+                <p class="user-name">
+                    <a
+                        href="https://www.youtube.com/watch?v=szgQUiiAnu8"
+                        target="_blank">
+                        Usagi
+                    </a>
+                </p>
+            </footer>
+        </figure>
+
+        <script>
+            const dateYear = document.querySelector(".yr-mo");
+            const currentDate = new Date().toLocaleDateString();
+            dateYear.textContent = currentDate;
+        </script>
+    </body>
+</html>
