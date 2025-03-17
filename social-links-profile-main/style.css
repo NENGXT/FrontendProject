@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    color: hsl(0, 0%, 100%);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    background-color: hsl(0, 0%, 8%);
+    height: 100vh;
+
+    display: flex;
+}
+
+.card-box {
+    width: 375px;
+    background-color: hsl(0, 0%, 12%);
+    border-radius: 1rem;
+    margin: auto;
+}
+
+/* figcaption */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.profile-link:link {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.2rem;
+}
+
+.address {
+    font-size: 1rem;
+    font-weight: 600;
+    color: hsl(75, 94%, 57%);
+}
+
+.about-me {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1.4rem;
+}
+
+/* Social Link */
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-link-btn:link,
+.social-link-btn:visited {
+    color: white;
+    background-color: hsl(0, 0%, 20%);
+    width: 60%;
+    border-radius: 0.6rem;
+    padding: 0.4rem 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.social-link-btn:last-child {
+    margin-bottom: 2rem;
+}
+
+.social-link-btn:hover {
+    color: hsl(75, 94%, 57%);
+    background-color: hsl(0, 0%, 10%);
+}
