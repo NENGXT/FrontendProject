@@ -3,10 +3,10 @@ address.textContent = "Loading...";
 // 获取位置信息
 async function getLocation() {
     try {
-        const response = await fetch("https://ip-api.com/json/"); // 使用 ipapi.co 获取位置信息
+        const response = await fetch("https://api.ip.sb/geoip/"); // 使用 ipapi.co 获取位置信息
         const data = await response.json(); // 解析 JSON 数据
         console.log(data);
-        const locationText = `${data.regionName}, ${data.country}`; // 构建地址文本
+        const locationText = `${data.region}, ${data.country}`; // 构建地址文本
         address.textContent = locationText;
     } catch (error) {
         address.textContent = "无法获取位置信息";
