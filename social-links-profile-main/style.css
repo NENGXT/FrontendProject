@@ -27,6 +27,7 @@ body {
 
 /* figcaption */
 .profile {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,15 +48,18 @@ body {
 
 .profile-name {
     font-size: 1.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
 }
 
 .address {
     font-size: 0.8rem;
     font-weight: 400;
     color: hsl(75, 94%, 57%);
-}
 
+    display: flex;
+    align-content: center;
+    gap: 0.4rem;
+}
 .about-me {
     font-size: 0.8rem;
     text-align: center;
@@ -83,7 +87,7 @@ body {
     text-decoration: none;
     font-size: 0.8rem;
     font-weight: 700;
-
+    outline: 1px solid transparent;
     transition: all 0.3s ease-in-out;
 }
 
@@ -94,4 +98,5 @@ body {
 .social-link-btn:hover {
     color: hsl(75, 94%, 57%);
     background-color: hsl(0, 0%, 10%);
+    outline: 1px solid hsl(75, 94%, 57%);
 }

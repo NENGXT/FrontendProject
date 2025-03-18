@@ -9,7 +9,6 @@
 -   [我的开发过程](#我的开发过程)
     -   [使用的技术](#使用的技术)
     -   [学到的知识](#学到的知识)
-    -   [未来的改进方向](#未来的改进方向)
     -   [参考资料](#参考资料)
 
 ## 概述
@@ -27,45 +26,106 @@
 
 -   响应式设计
 -   Hover 效果
--   基础的 JavaScript 用于时间显示
+-   基础的 JavaScript 用于地理位置信息
 
 ### 学到的知识
 
--   如何使用 CSS Flexbox 技术来布置内容。
--   使用 `@font-face` 添加自定义字体：
+-   练习 CSS 技术来布置内容。
+-   使用 `outline` 来添加不影响布局的边框。
 
     ```css
-    @font-face {
-        font-family: "Figtree";
-        src: url("./assets/fonts/static/Figtree-Medium.ttf") format("truetype");
+    .social-link-btn:hover {
+        color: hsl(75, 94%, 57%);
+        background-color: hsl(0, 0%, 10%);
+        outline: 1px solid hsl(75, 94%, 57%);
     }
     ```
 
--   如何通过简单的 JavaScript 获取和显示当前日期：
+-   通过调用 `fetch` API 获取地理位置信息，并将其显示在页面上。
 
     ```javascript
-    const dateYear = document.querySelector(".yr-mo");
-    const currentDate = new Date().toLocaleDateString();
-    dateYear.textContent = currentDate;
-    ```
-
--   通过使用`:hover` 选择器来实现悬停效果：
-    ```css
-    .card-box:hover {
-        box-shadow: 0.5rem 0.5rem #121212;
-        transform: translate(-0.5rem, -0.5rem);
+    async function getLocation() {
+        try {
+            const response = await fetch("http://ip-api.com/json/");
+            const data = await response.json();
+            const locationText = `${data.regionName}, ${data.country}`;
+            address.textContent = locationText;
+        } catch (error) {
+            address.textContent = "无法获取位置信息";
+            console.error("获取位置信息失败:", error);
+        }
     }
     ```
-
-### 未来的改进方向
-
--   学习并应用 CSS Grid 来增强布局能力。
--   探索更多关于动画效果和过渡效果的知识，提升用户体验。
 
 ### 参考资料
 
--   [CSS Flexbox 指南](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
--   [Font-Face 装载自定义字体](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
--   [获取当前日期和时间](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+-   [ip-api.com](https://ip-api.com/)
+-   [Bootstrap Icons](https://icons.getbootstrap.com/)
+
+---
+
+# Frontend Mentor - Social Links Profile Solution
+
+This is a solution to the [Social Links Profile challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ).
+
+## Table of Contents
+
+-   [Overview](#overview)
+    -   [Screenshots](#screenshots)
+-   [My Development Process](#my-development-process)
+    -   [Technologies Used](#technologies-used)
+    -   [Lessons Learned](#lessons-learned)
+    -   [References](#references)
+
+## Overview
+
+The purpose of this project is to build a responsive blog preview card component, focusing on user experience across different devices.
+
+### Screenshots
+
+![Desktop Version](./completed/desktop.png)
+![Mobile Version](./completed/moblie.jpg)
+
+## My Development Process
+
+### Technologies Used
+
+-   Responsive Design
+-   Hover Effects
+-   Basic JavaScript for geolocation information
+
+### Lessons Learned
+
+-   Practiced CSS techniques for layout.
+-   Used `outline` to add a border effect without affecting the layout.
+
+    ```css
+    .social-link-btn:hover {
+        color: hsl(75, 94%, 57%);
+        background-color: hsl(0, 0%, 10%);
+        outline: 1px solid hsl(75, 94%, 57%);
+    }
+    ```
+
+-   Used the `fetch` API to retrieve geolocation information and display it on the page.
+
+    ```javascript
+    async function getLocation() {
+        try {
+            const response = await fetch("http://ip-api.com/json/");
+            const data = await response.json();
+            const locationText = `${data.regionName}, ${data.country}`;
+            address.textContent = locationText;
+        } catch (error) {
+            address.textContent = "Unable to retrieve location information";
+            console.error("Failed to get location:", error);
+        }
+    }
+    ```
+
+### References
+
+-   [ip-api.com](https://ip-api.com/)
+-   [Bootstrap Icons](https://icons.getbootstrap.com/)
 
 ---
