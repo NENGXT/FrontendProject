@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+$color-body: hsl(30, 18%, 87%);
+$color-bg: hsl(0, 0%, 100%);
+$color-brown: hsl(14, 45%, 36%);
+$color-rose: hsl(332, 51%, 32%);
+$color-rose-light: hsl(330, 100%, 98%);
+
+$color-text-black-dark: hsl(24, 5%, 18%);
+$color-text-black-light: hsl(30, 10%, 34%);
+$color-text-gary: hsl(30, 18%, 87%);
+
+$page-border-radius: 1rem;
+
+$font-outfit: "Outfit", sans-serif;
+$font-young-serif: "Young Serif", serif;
+
+//------混合器-------//
+@mixin font-setting($color, $size, $weight, $family) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    line-height: 1.4rem;
+}
+
+//flex布局
+@mixin flex-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+@mixin text-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+//列表样式
+@mixin list-style($type, $color) {
+    line-height: 2rem;
+    list-style-type: $type;
+    list-style-position: outside;
+    margin-left: 1.4rem;
+    li {
+        &::marker {
+            color: $color;
+            font-weight: bold;
+        }
+    }
+    .list--textbox {
+        margin-left: 1rem;
+    }
+}
+
+//------页面样式-------//
+// 页面基本样式
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//字体
+h1 {
+    @include font-setting($color-text-black-dark, 2rem, 400, $font-young-serif);
+    line-height: 2rem;
+}
+
+h2 {
+    @include font-setting($color-brown, 1.5rem, 400, $font-young-serif);
+}
+
+body {
+    background-color: $color-body;
+    width: 100%;
+    height: 100vh;
+}
+
+.recipe__page {
+    width: 60%;
+    margin: auto;
+    background-color: $color-bg;
+    padding: 2rem;
+    border-radius: $page-border-radius;
+    @include flex-center;
+}
+
+//------每个卡片样式-------//
+// 头部图片样式
+img {
+    width: 100%;
+    border-radius: $page-border-radius;
+}
+
+.recipe--text--header {
+    @include text-box;
+    .recipe-text {
+        @include font-setting($color-text-black-light, 1rem, 400, $font-outfit);
+    }
+}
+
+.recipe--card {
+    background-color: $color-rose-light;
+    padding: 2rem;
+    border-radius: $page-border-radius;
+    @include text-box;
+    @include font-setting($color-text-black-light, 1rem, 400, $font-outfit);
+
+    h3 {
+        font-size: 1.2rem;
+        color: $color-rose;
+    }
+}
+
+//章节样式
+.recipe--textlist {
+    @include text-box;
+    @include font-setting($color-text-black-light, 1rem, 400, $font-outfit);
+    &::after {
+        content: "";
+        border-bottom: 1px solid $color-text-gary;
+        width: 100%;
+    }
+
+    // 移除最后一个 section 的下划线
+    &:last-child::after {
+        border-bottom: none;
+    }
+}
+
+//列表样式
+.list--ul {
+    @include list-style(square, $color-rose);
+}
+
+.list--ol {
+    @include list-style(decimal, $color-brown);
+}
+
+//表格样式
+.nutrition-table {
+    border-collapse: collapse;
+
+    td {
+        border-bottom: 1px solid $color-text-gary;
+        text-indent: 2rem;
+        line-height: 3rem;
+    }
+
+    // 移除最后一行的下划线
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    .number {
+        color: $color-brown;
+        font-weight: bold;
+    }
+}
+
+//媒体查询
+@media (max-width: 425px) {
+    .recipe__page {
+        width: 100%;
+        border-radius: 0;
+        background-color: $color-bg;
+        padding: 0;
+        @include flex-center;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .recipe--text--header,
+    .recipe--card,
+    .recipe--textlist {
+        margin: 0 2rem;
+    }
+}
+@media (max-width: 375px) {
+    .recipe__page {
+        width: 100%;
+        border-radius: 0;
+        background-color: $color-bg;
+        padding: 0;
+        @include flex-center;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .recipe--text--header,
+    .recipe--card,
+    .recipe--textlist {
+        margin: 0 2rem;
+    }
+}

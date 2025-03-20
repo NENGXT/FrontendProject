@@ -1,89 +1,193 @@
-# Frontend Mentor - Recipe page
+# Frontend Mentor - 食谱页面解决方案
 
-![Design preview for the Recipe page coding challenge](./preview.jpg)
+这是 [Frontend Mentor 上的食谱页面挑战](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm)的解决方案。Frontend Mentor 挑战帮助你通过构建真实项目来提升编码技能。
 
-## Welcome! 👋
+## 目录
 
-Thanks for checking out this front-end coding challenge.
+-   [概述](#概述)
+    -   [项目目标](#项目目标)
+    -   [截图](#截图)
+-   [开发过程](#开发过程)
+    -   [使用技术](#使用技术)
+    -   [主要功能](#主要功能)
+    -   [学到的知识](#学到的知识)
+    -   [参考资料](#参考资料)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+---
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## 概述
 
-## The challenge
+### 项目目标
 
-Your challenge is to build out this recipe page and get it looking as close to the design as possible.
+本项目的目标是使用 **Sass (SCSS)** 创建一个 **响应式食谱页面**，拥有清晰的布局结构，并能适应不同屏幕尺寸，为用户提供直观的体验。
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### 截图
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+#### **桌面端**
 
-## Where to find everything
+![桌面版](./completed/desktop.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+#### **移动端**
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+![移动版](./completed/moblie.jpg)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+---
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+## 开发过程
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### 使用技术
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+-   **语义化 HTML5**
+-   **Flexbox & CSS Grid**
+-   **Sass (SCSS)**
+-   **媒体查询以适配不同设备**
 
-## Building your project
+### 主要功能
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+1. **响应式布局**
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+    - 使用 **Flexbox** 创建动态、适应性强的页面结构。
 
-## Deploying your project
+2. **SCSS 功能实现**
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+    - **颜色 & 字体变量**
+        ```scss
+        $color-rose-light: hsl(330, 100%, 98%);
+        $font-outfit: "Outfit", sans-serif;
+        ```
+    - **Mixin 复用样式**
+        ```scss
+        @mixin flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3rem;
+        }
+        ```
+    - **嵌套结构，优化代码层次**
+        ```scss
+        .recipe-card {
+            background-color: $color-rose-light;
+            padding: 2rem;
+            border-radius: 10px;
+            h3 {
+                font-size: 1.2rem;
+                color: $color-rose;
+            }
+        }
+        ```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+---
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+### 学到的知识
 
-## Create a custom `README.md`
+通过此项目，我学习并实践了：
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+-   **使用 Sass 变量和 Mixin** 来优化 CSS 代码结构。
+-   **Sass 嵌套** 结构，提高代码可读性。
+-   **优化 CSS 代码，使其更具灵活性和可扩展性**。
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+---
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### 参考资料
 
-## Submitting your solution
+-   [Sass 官方文档](https://sass-lang.com/documentation) - SCSS 语法及最佳实践指南。
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+---
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+# Frontend Mentor - Recipe Page Solution
 
-## Sharing your solution
+This is a solution to the [Recipe page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm). Frontend Mentor challenges help you improve your coding skills by building real-world projects.
 
-There are multiple places you can share your solution:
+## Table of Contents
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+-   [Overview](#overview)
+    -   [Project Goal](#project-goal)
+    -   [Screenshots](#screenshots)
+-   [Development Process](#development-process)
+    -   [Technologies Used](#technologies-used)
+    -   [Key Features](#key-features)
+    -   [Lessons Learned](#lessons-learned)
+    -   [References](#references)
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+---
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+## Overview
 
-## Got feedback for us?
+### Project Goal
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+The goal of this project is to create a **responsive recipe page** using **Sass (SCSS)**, with a clear layout structure that adapts well to different screen sizes and provides an intuitive user experience.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### Screenshots
 
-**Have fun building!** 🚀
+#### **Desktop Version**
+
+![Desktop Version](./completed/desktop.png)
+
+#### **Mobile Version**
+
+![Mobile Version](./completed/moblie.jpg)
+
+---
+
+## Development Process
+
+### Technologies Used
+
+-   **Semantic HTML5**
+-   **Flexbox & CSS Grid**
+-   **Sass (SCSS)**
+-   **Media Queries for Responsive Design**
+
+### Key Features
+
+1. **Responsive Layout**
+
+    - Utilized **Flexbox** to create a dynamic and adaptable page structure.
+
+2. **SCSS Implementations**
+
+    - **Color & Font Variables**
+        ```scss
+        $color-rose-light: hsl(330, 100%, 98%);
+        $font-outfit: "Outfit", sans-serif;
+        ```
+    - **Mixin for Reusable Styles**
+        ```scss
+        @mixin flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3rem;
+        }
+        ```
+    - **Nested Structure for Clean Code Organization**
+        ```scss
+        .recipe-card {
+            background-color: $color-rose-light;
+            padding: 2rem;
+            border-radius: 10px;
+            h3 {
+                font-size: 1.2rem;
+                color: $color-rose;
+            }
+        }
+        ```
+
+---
+
+### Lessons Learned
+
+Through this project, I have practiced and improved:
+
+-   **Using Sass variables and mixins** to optimize CSS structure.
+-   **Sass nesting** for better code readability.
+-   **Optimizing CSS code** to make it more flexible and scalable.
+
+---
+
+### References
+
+-   [Sass Official Documentation](https://sass-lang.com/documentation) - SCSS syntax and best practices guide.
+
+---
