@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+        <link rel="stylesheet" href="./src/output.css" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png" />
+
+        <title>Frontend Mentor | Product preview card component</title>
+    </head>
+    <body
+        class="bodyscreen flex justify-center items-center min-h-screen bg-cream">
+        <main
+            class="flex flex-col w-[90%] md:flex-row md:items-center md:w-[40%] md:h-[450px] rounded-[1rem] bg-white">
+            <div
+                class="w-full h-[40vh] md:w-1/2 md:h-full bg-center bg-cover bg-[url('/images/image-product-mobile.jpg')] md:bg-[url('/images/image-product-desktop.jpg')] rounded-t-[1rem] md:rounded-l-[1rem] md:rounded-t-none overflow-hidden"></div>
+            <section class="page-right p-[1.4rem] flex flex-col gap-5 md:w-1/2">
+                <p
+                    class="page-logotext text-[0.8rem] text-grey tracking-[0.5rem] font-medium">
+                    PERFUME
+                </p>
+                <h1 class="page-title text-[2rem] leading-[2rem] font-[900]">
+                    Gabrielle Essence Eau De Parfum
+                </h1>
+
+                <p class="page-description text-[0.8rem] text-grey">
+                    A floral, solar and voluptuous interpretation composed by
+                    Olivier Polge, Perfumer-Creator for the House of CHANEL.
+                </p>
+
+                <div class="page-price flex items-center gap-5">
+                    <h1 class="text-[2rem] font-[900] text-green500">
+                        $149.99
+                    </h1>
+                    <span class="text-[0.8rem] text-grey line-through"
+                        >$169.99</span
+                    >
+                </div>
+                <button
+                    class="page-button bg-green500 hover:bg-green700 active:bg-green700 transition-colors duration-300 text-white font-bold rounded-md p-3 flex items-center justify-center cursor-pointer">
+                    <img
+                        class="inline-block w-3"
+                        src="./images/icon-cart.svg"
+                        alt="cart" />
+                    <p
+                        class="page-btn text-white text-center inline-block ml-2">
+                        Add to Cart
+                    </p>
+                </button>
+            </section>
+        </main>
+    </body>
+</html>
