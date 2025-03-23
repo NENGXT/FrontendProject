@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+}
+
+@media (max-width: 425px) {
+    .header {
+        width: 80%;
+        margin-top: 1rem;
+    }
+}
