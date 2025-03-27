@@ -48,5 +48,12 @@
 }
 
 .card-shadow:hover {
+    cursor: pointer;
     box-shadow: 2rem 2rem 20px rgba(0, 0, 0, 0.2);
+    transform: translate(-5px, -5px);
+}
+
+.card-shadow:active {
+    box-shadow: none;
+    transform: translate(0);
 }
