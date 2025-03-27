@@ -9,4 +9,6 @@
     --grey-500: hsl(217, 19%, 35%);
     --dark-blue: hsl(219, 29%, 14%);
     --black: hsl(0, 0%, 7%);
+
+    --radius: 1rem;
 }

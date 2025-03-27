@@ -2,3 +2,6 @@
 @import "./layouts.css";
 @import "./var.css";
 @import "./components/cards.css";
+@import "./responsive.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");

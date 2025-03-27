@@ -1,0 +1,12 @@
+@media (max-width: 1024px) {
+    .container {
+        max-width: 60%;
+        margin: auto 0;
+    }
+
+    .grid-flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
