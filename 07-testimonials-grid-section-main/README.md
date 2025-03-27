@@ -49,3 +49,57 @@
 
 -   [CSS Tricks: A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/) - 这篇指南内容非常全面，是学习 CSS Grid 布局的极佳资源。
 -   [MDN Web Docs](https://developer.mozilla.org/) - 理解各种 CSS 属性及其浏览器兼容性的常用参考。
+
+---
+
+# Frontend Mentor - Testimonials Grid Section Solution
+
+This is my solution to the [Testimonials Grid Section Challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). The challenges provided by Frontend Mentor help you improve your coding skills by building real projects, particularly focusing on responsive design.
+
+## Table of Contents
+
+-   [Overview](#overview)
+    -   [Screenshots](#screenshots)
+    -   [Links](#links)
+-   [Process](#process)
+    -   [Technologies Used](#technologies-used)
+    -   [Key Learnings](#key-learnings)
+    -   [Future Improvements](#future-improvements)
+    -   [Resources](#resources)
+
+## Overview
+
+### Screenshots
+
+![Desktop Version](./compeled/desktop.png)
+![Mobile Version](./compeled/moblie.jpg)
+
+## Process
+
+### Technologies Used
+
+-   **Semantic HTML5**
+-   **CSS** with custom properties
+-   Layout using **CSS Grid** and **Flexbox**
+
+### Key Learnings
+
+Throughout the completion of this project, I enhanced the following skills:
+
+-   Creating responsive layouts using CSS Grid and Flexbox.
+-   Building reusable CSS components through modular stylesheets.
+
+Here's a CSS component that I am particularly proud of:
+
+```css
+.card-shadow:hover {
+    cursor: pointer;
+    box-shadow: 2rem 2rem 20px rgba(0, 0, 0, 0.2);
+    transform: translate(-5px, -5px);
+}
+```
+
+### Resources
+
+-   [CSS Tricks: A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+-   [MDN Web Docs](https://developer.mozilla.org/)
