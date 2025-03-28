@@ -1,36 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Article preview component</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        <title>Frontend Mentor | Article preview component</title>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+        <link rel="stylesheet" href="./css/main.css" />
+    </head>
+    <body>
+        <section class="container">
+            <div class="img-box">
+                <img
+                    class="img-header"
+                    src="./images/drawers.jpg"
+                    alt="drawers" />
+            </div>
+            <article class="text-box">
+                <h1 class="text-box-title">
+                    Shift the overall look and feel by adding these wonderful
+                    touches to furniture in your home
+                </h1>
+                <p class="text-box-paragraph">
+                    Ever been in a room and felt like something was missing?
+                    Perhaps it felt slightly bare and uninviting. I’ve got some
+                    simple tips to help you make any room feel complete.
+                </p>
+            </article>
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+            <footer class="footer-box">
+                <div class="social-icons">
+                    <a href="#" target="_blank"
+                        ><img
+                            class="img-icon"
+                            src="./images/avatar-michelle.jpg"
+                            alt=""
+                    /></a>
+                </div>
 
-  Michelle Appleton
-  28 Jun 2020
+                <div class="social-text">
+                    <p class="social-text-name">Michelle Appleton</p>
+                    <p class="social-text-date">28 Jun 2020</p>
+                </div>
+            </footer>
 
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            <div class="social-card">
+                <p>SHARE</p>
+                <nav class="social-card-nav">
+                    <a href="#" target="_blank"
+                        ><img src="./images/icon-facebook.svg" alt="facebook"
+                    /></a>
+                    <a href="#" target="_blank"
+                        ><img src="./images/icon-twitter.svg" alt="twitter"
+                    /></a>
+                    <a href="#" target="_blank"
+                        ><img src="./images/icon-pinterest.svg" alt="pinterest"
+                    /></a>
+                </nav>
+            </div>
+
+            <div class="share-icons">
+                <a href="#" target="_blank"></a>
+            </div>
+
+            <!-- <div class="check-area"></div> -->
+        </section>
+
+        <script src="./script.js"></script>
+    </body>
 </html>
