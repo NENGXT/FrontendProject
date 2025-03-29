@@ -21,7 +21,7 @@ body {
     width: 90%;
     background-color: white;
     border-radius: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -44,35 +44,42 @@ body {
     }
 }
 
-.text-box {
-    line-height: 1.5rem;
-    padding: 0 2rem;
+.info-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
-
-    .text-box-title {
-        font-size: 1rem;
-        font-weight: 700;
-        color: $dark-blue;
-    }
-
-    .text-box-paragraph {
-        font-size: 0.8rem;
-        font-weight: 500;
-        color: $desaturated-dark-blue;
-    }
-}
-
-.footer-box {
-    width: 100%;
-    padding: 0 2rem;
-    position: relative;
-    display: flex;
-    align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    padding: 0 3rem;
+
+    .text-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+
+        .text-box-title {
+            line-height: 1.4rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: $dark-blue;
+        }
+
+        .text-box-paragraph {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $desaturated-dark-blue;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .footer-box {
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
 }
 
 .social-icons {
@@ -106,12 +113,9 @@ body {
 
 .share-icons {
     cursor: pointer;
-    background-image: url("/images/icon-share.svg");
-
-    position: absolute;
+    position: relative;
     z-index: 999;
-    bottom: 1rem;
-    right: 2rem;
+    margin-left: auto;
     width: 30px;
     height: 30px;
     display: flex;
@@ -119,17 +123,18 @@ body {
     align-items: center;
     background-color: $background-color;
     border-radius: 50%;
-
-    &:hover {
-        background-color: $desaturated-dark-blue;
-    }
-    a {
-        display: inline-block;
-        width: 100%;
-    }
+    transition: all 0.3s;
 }
 
-.social-card {
+.share-icons-black {
+    background-color: $desaturated-dark-blue;
+}
+
+.icon-white {
+    filter: brightness(0) invert(100%);
+}
+
+.social-card-moblie {
     width: 100%;
     position: absolute;
     z-index: 102;
@@ -139,7 +144,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1.4rem;
-    padding: 1.4rem 2rem;
+    padding: 1.6rem 2rem;
 
     p {
         letter-spacing: 0.4rem;
@@ -150,33 +155,19 @@ body {
 
     transform: translate(0, 100%);
     transition: all 0.3s ease-in-out;
-}
+    .social-card-nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
-.social-card-nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    img,
-    a {
-        width: 18px;
-        height: 18px;
+        img,
+        a {
+            width: 18px;
+            height: 18px;
+        }
     }
 }
 
 .active {
     transform: translate(0, 0);
 }
-
-// .check-area {
-//     outline: 1px solid $grayish-blue;
-//     width: 100%;
-//     position: absolute;
-//     z-index: 102;
-//     bottom: 0;
-//     left: 0;
-//     gap: 1.4rem;
-//     padding: 2rem;
-// }
-
-//

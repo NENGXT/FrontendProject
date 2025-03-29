@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 * {
   margin: 0;
@@ -20,7 +21,7 @@ body {
   width: 90%;
   background-color: white;
   border-radius: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -42,28 +43,33 @@ body {
   object-fit: cover;
 }
 
-.text-box {
-  line-height: 1.5rem;
-  padding: 0 2rem;
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 3rem;
+}
+.info-box .text-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
 }
-.text-box .text-box-title {
+.info-box .text-box .text-box-title {
+  line-height: 1.4rem;
   font-size: 1rem;
   font-weight: 700;
   color: hsl(217, 19%, 35%);
 }
-.text-box .text-box-paragraph {
+.info-box .text-box .text-box-paragraph {
   font-size: 0.8rem;
   font-weight: 500;
   color: hsl(214, 17%, 51%);
+  margin-bottom: 1rem;
 }
-
-.footer-box {
+.info-box .footer-box {
   width: 100%;
-  padding: 0 2rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -99,11 +105,9 @@ body {
 
 .share-icons {
   cursor: pointer;
-  background-image: url("/images/icon-share.svg");
-  position: absolute;
+  position: relative;
   z-index: 999;
-  bottom: 1rem;
-  right: 2rem;
+  margin-left: auto;
   width: 30px;
   height: 30px;
   display: flex;
@@ -111,16 +115,18 @@ body {
   align-items: center;
   background-color: hsl(210, 46%, 95%);
   border-radius: 50%;
-}
-.share-icons:hover {
-  background-color: hsl(214, 17%, 51%);
-}
-.share-icons a {
-  display: inline-block;
-  width: 100%;
+  transition: all 0.3s;
 }
 
-.social-card {
+.share-icons-black {
+  background-color: hsl(214, 17%, 51%);
+}
+
+.icon-white {
+  filter: brightness(0) invert(100%);
+}
+
+.social-card-moblie {
   width: 100%;
   position: absolute;
   z-index: 102;
@@ -130,28 +136,110 @@ body {
   display: flex;
   align-items: center;
   gap: 1.4rem;
-  padding: 1.4rem 2rem;
+  padding: 1.6rem 2rem;
   transform: translate(0, 100%);
   transition: all 0.3s ease-in-out;
 }
-.social-card p {
+.social-card-moblie p {
   letter-spacing: 0.4rem;
   font-size: 0.8rem;
   font-weight: 500;
   color: hsl(212, 23%, 69%);
 }
-
-.social-card-nav {
+.social-card-moblie .social-card-nav {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.social-card-nav img,
-.social-card-nav a {
+.social-card-moblie .social-card-nav img,
+.social-card-moblie .social-card-nav a {
   width: 18px;
   height: 18px;
 }
 
 .active {
   transform: translate(0, 0);
+}
+
+@media (min-width: 1440px) {
+  .container {
+    width: 50%;
+    border-radius: 1rem;
+    overflow: visible;
+    flex-direction: row;
+    gap: 0;
+  }
+  .img-box {
+    width: 100%;
+    position: relative;
+    padding-top: 40%;
+  }
+  .img-box .img-header {
+    border-radius: 1rem 0 0 1rem;
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 0 4rem;
+  }
+  .info-box .text-box {
+    gap: 0.8rem;
+  }
+  .info-box .text-box .text-box-title {
+    line-height: 2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+  }
+  .info-box .text-box .text-box-paragraph {
+    line-height: 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: hsl(214, 17%, 51%);
+    margin-bottom: 0;
+  }
+  .info-box .footer-box {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0;
+  }
+  .info-box .footer-box .share-icons {
+    margin-left: auto;
+    margin-right: 2rem;
+  }
+  .social-card-moblie {
+    width: auto;
+    border-radius: 2rem;
+    bottom: auto;
+    right: 0;
+    left: auto;
+    padding: 1rem 2rem;
+    transform: translate(4%, 150%) scale(0);
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+  }
+  .social-card-moblie::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid hsl(217, 19%, 35%);
+  }
+  .active {
+    transform: translate(4%, 90%) scale(1);
+  }
 }/*# sourceMappingURL=main.css.map */

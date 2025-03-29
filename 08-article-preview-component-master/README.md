@@ -1,94 +1,215 @@
-# Frontend Mentor - Article preview component
+# Frontend Mentor - 文章预览组件解决方案
 
-![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)
+这是 [Frontend Mentor 上的文章预览组件挑战](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT) 的解决方案。
 
-## Welcome! 👋
+## 目录
 
-Thanks for checking out this front-end coding challenge.
+-   [概述](#概述)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+    -   [项目截图](#项目截图)
 
-**To do this challenge, you need a basic understanding of HTML, CSS and a tiny bit of JavaScript.**
+-   [我的开发过程](#我的开发过程)
 
-## The challenge
+    -   [开发技术](#开发技术)
+    -   [学习心得](#学习心得)
+    -   [相关资源](#相关资源)
 
-Your challenge is to build out this article preview component and get it looking as close to the design as possible.
+## 概述
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### 项目截图
 
-The only JavaScript you'll need for this challenge is to initiate the share options when someone clicks the share icon.
+<div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
+<img src="./completed/moblie_active.jpg"  />
+<img src="./completed/desktop.png"  />
 
-Your users should be able to: 
+</div>
 
-- View the optimal layout for the component depending on their device's screen size
-- See the social media share links when they click the share icon
+## 我的开发过程
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### 开发技术
 
-## Where to find everything
+-   语义化 HTML5 标签
+-   SCSS 预处理器
+-   Flexbox 弹性布局
+-   移动端优先的响应式设计
+-   JavaScript DOM 操作和事件处理
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### 学习心得
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+在这个项目中，我主要学习了以下几点：
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+#### 1. 响应式社交分享卡片设计
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+实现了在不同设备上展现不同交互效果的社交分享组件：
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+##### 移动端设计
 
-## Building your project
+-   采用全屏宽度的底部滑出式面板
+-   关键特性：
+    -   绝对定位实现底部固定
+    -   平滑的上下滑动过渡动画
+    ```scss
+    .social-card-moblie {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(0, 100%);
+        transition: all 0.3s ease-in-out;
+    }
+    ```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+##### 桌面端设计
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+-   采用轻量气泡式设计
+-   特色功能：
 
-## Deploying your project
+    -   自适应宽度的卡片
+    -   圆角和阴影效果
+    -   带有指向性的三角形装饰
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+    ```scss
+    @media (min-width: 1440px) {
+        .social-card-moblie {
+            width: auto;
+            border-radius: 2rem;
+            box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+            transform: translate(4%, 150%) scale(0);
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+            &::after {
+                content: "";
+                position: absolute;
+                border-top: 8px solid $dark-blue;
+                // 三角形样式
+            }
+        }
+    }
+    ```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+#### 2. 技术要点
 
-## Create a custom `README.md`
+-   **CSS 变换与过渡**：
+    -   使用 `transform` 实现平移和缩放
+    -   添加 `transition` 实现平滑动画效果
+-   **伪元素应用**：
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+    -   使用 `::after` 伪元素创建气泡指示箭头
+    -   通过 border 属性构建三角形
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+-   **响应式设计思维**：
+    -   采用移动优先的开发方式
+    -   通过媒体查询适配不同设备尺寸
+    -   灵活运用相对单位确保布局弹性
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### 相关资源
 
-## Submitting your solution
+-   [CSS-Tricks - Flexbox 完全指南](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - 帮助我理解 Flexbox 布局
+-   [MDN Web Docs](https://developer.mozilla.org/) - JavaScript DOM 操作参考
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+---
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+# Frontend Mentor - Article Preview Component Solution
 
-## Sharing your solution
+This is a solution to the [Article Preview Component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/article-preview-component-dYBN_pYFT).
 
-There are multiple places you can share your solution:
+## Table of contents
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+-   [Overview](#overview)
+    -   [Screenshot](#screenshot)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Useful resources](#useful-resources)
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+## Overview
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+### Screenshot
 
-## Got feedback for us?
+<div class="row" style="display: flex; flex-wrap: wrap; gap: 20px;">
+<img src="./completed/moblie_active.jpg"  />
+<img src="./completed/desktop.png"  />
+</div>
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+## My process
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### Built with
 
-**Have fun building!** 🚀
+-   Semantic HTML5 markup
+-   SCSS preprocessor
+-   Flexbox
+-   Mobile-first responsive design
+-   JavaScript DOM manipulation and event handling
+
+### What I learned
+
+Here are the key learnings from this project:
+
+#### 1. Responsive Social Share Card Design
+
+Implemented a social sharing component with different interaction effects across devices:
+
+##### Mobile Design
+
+-   Full-width bottom slide-up panel
+-   Key features:
+    -   Fixed bottom positioning using absolute positioning
+    -   Smooth slide up/down transition animations
+    ```scss
+    .social-card-moblie {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translate(0, 100%);
+        transition: all 0.3s ease-in-out;
+    }
+    ```
+
+##### Desktop Design
+
+-   Lightweight tooltip-style design
+-   Featured functionalities:
+
+    -   Auto-width card
+    -   Rounded corners and shadow effects
+    -   Directional triangle decoration
+
+    ```scss
+    @media (min-width: 1440px) {
+        .social-card-moblie {
+            width: auto;
+            border-radius: 2rem;
+            box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+            transform: translate(4%, 150%) scale(0);
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-top: 8px solid $dark-blue;
+                // Triangle styling
+            }
+        }
+    }
+    ```
+
+#### 2. Technical Highlights
+
+-   **CSS Transforms & Transitions**:
+
+    -   Used `transform` for translation and scaling
+    -   Added `transition` for smooth animation effects
+
+-   **Pseudo-element Applications**:
+
+    -   Utilized `::after` pseudo-element for tooltip arrow
+    -   Created triangle shapes using border properties
+
+-   **Responsive Design Philosophy**:
+    -   Adopted mobile-first development approach
+    -   Implemented media queries for device adaptation
+    -   Applied relative units for flexible layouts
+
+### Useful resources
+
+-   [CSS-Tricks - Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - Helped me understand Flexbox layout
+-   [MDN Web Docs](https://developer.mozilla.org/) - Reference for JavaScript DOM manipulation
