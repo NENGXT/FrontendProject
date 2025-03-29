@@ -9,5 +9,6 @@
 -   [Frontend Mentor - Product Card](./05-product-preview-card-component-main/)
 -   [Frontend Mentor - Four Cards](./06-four-card-feature-section-master/)
 -   [Frontend Mentor - Testimonials Grid Section](./07-testimonials-grid-section-main/)
+-   [Frontend Mentor - Article Preview](./08-article-preview-component-master/)
 
 **持续更新中...**
