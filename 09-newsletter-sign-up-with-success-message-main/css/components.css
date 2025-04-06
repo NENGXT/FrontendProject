@@ -1,0 +1,20 @@
+.card-email {
+    padding: 1rem;
+    border-radius: 0.6rem;
+    border: none;
+    outline: 1px solid var(--color-blue-700);
+
+    color: var(--color-blue-700);
+    line-height: 1.5;
+}
+
+.card-submit {
+    padding: 1rem;
+    border-radius: 0.6rem;
+    border: none;
+    background-color: var(--color-blue-700);
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+    font-size: 1rem;
+    cursor: pointer;
+}
