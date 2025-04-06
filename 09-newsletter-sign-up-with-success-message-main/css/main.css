@@ -26,6 +26,7 @@ body {
     background-color: var(--color-white);
     border-radius: 2rem;
     display: flex;
+
     justify-content: center;
     align-items: center;
 }
