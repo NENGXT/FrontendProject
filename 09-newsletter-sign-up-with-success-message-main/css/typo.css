@@ -23,3 +23,19 @@ label {
     font-weight: 500;
     color: var(--color-blue-700);
 }
+
+.card-label-text {
+    font-size: 0.6rem;
+    font-weight: 500;
+    color: var(--color-red);
+}
+
+.card-title-success {
+    font-size: 2.2rem;
+    margin-top: 1rem;
+}
+
+.card-text-success {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}

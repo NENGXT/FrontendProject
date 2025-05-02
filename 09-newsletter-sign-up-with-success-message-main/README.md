@@ -1,99 +1,173 @@
-# Frontend Mentor - Newsletter sign-up form with success message
+# Newsletter 订阅表单项目 - 成功提交提示版
 
-![Design preview for the Newsletter sign-up form with success message coding challenge](./preview.jpg)
+这是我在 [Frontend Mentor](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv) 上完成的练习项目，主要目的是练习 **表单验证、DOM 操作、响应式布局与用户交互设计**。
 
-## Welcome! 👋
+-   [项目功能需求](#项目功能需求)
+-   [项目截图](#项目截图)
+-   [技术实现](#技术实现)
+-   [使用的知识](#使用的知识)
+-   [后续优化方向](#后续优化方向)
+-   [参考资料](#参考资料)
 
-Thanks for checking out this front-end coding challenge.
+---
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## 项目功能需求
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+用户可以：
 
-## The challenge
+-   输入邮箱并提交表单
+-   在邮箱有效时，看到一个成功提交的界面
+-   在邮箱为空或格式不正确时，看到提示信息
+-   根据设备尺寸查看适配布局
+-   所有交互元素具有 hover / focus 效果
 
-Your challenge is to build out this newsletter form and get it looking as close to the design as possible.
+---
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+## 项目截图
 
-Your users should be able to:
+![截图 1](./completed/Normal.png)
+![截图 2](./completed/Error.png)
+![截图 3](./completed/Suscess.png)
 
-- Add their email and submit the form
-- See a success message with their email after successfully submitting the form
-- See form validation messages if:
-  - The field is left empty
-  - The email address is not formatted correctly
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+---
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+## 技术实现
 
-## Where to find everything
+### 使用技术：
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+-   原生 HTML + CSS（模块化结构）
+-   CSS 自定义属性（变量）
+-   `insertAdjacentHTML()` 添加 DOM 元素
+-   正则表达式判断邮箱格式
+-   CSS 动画（果冻弹出效果）
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+---
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## 使用的知识
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+-   ✅ **邮箱格式验证**：
+    使用正则表达式 `/^[^\s@]+@[^\s@]+\.[^\s@]+$/` 判断格式是否正确。
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+-   ✅ **错误信息避免重复添加**：
+    判断 `.error-msg` 是否已经存在，避免多次插入提示。
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+-   ✅ **placeholder 颜色动态变更**：
+    通过 `.red-placeholder::placeholder` 控制 placeholder 样式。
 
-## Building your project
+-   ✅ **果冻弹出动画**：
+    使用 `@keyframes pop` 模拟弹性弹出视觉效果。
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+```js
+const isCorrectEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+if (!isCorrectEmail && !document.querySelector(".error-msg")) {
+    const errorHtml = `<p class="card-label-text error-msg">Please provide a valid email address.</p>`;
+    labelBox.insertAdjacentHTML("beforeend", errorHtml);
+}
+```
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+---
 
-## Deploying your project
+## 后续优化方向
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+-   将验证逻辑封装为模块
+-   增加键盘提交与 Enter 支持
+-   添加动画“轻量模式”（`prefers-reduced-motion`）
+-   增加对多个输入框或多步骤表单的拓展能力
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+---
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+## 参考资料
 
-## Create a custom `README.md`
+-   [MDN - insertAdjacentHTML() 使用方法](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/insertAdjacentHTML)
+-   [正则表达式验证邮箱](https://regexr.com/)
+-   [CSS placeholder 样式详解](https://developer.mozilla.org/zh-CN/docs/Web/CSS/::placeholder)
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+---
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+# Newsletter Sign-up Form Project - With Success Message
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+This is my solution to the [Frontend Mentor challenge](https://www.frontendmentor.io/challenges/newsletter-signup-form-with-success-message-3FC1AZbNrv), focused on practicing **form validation, DOM manipulation, responsive layout, and user interaction design**.
 
-## Submitting your solution
+## Table of Contents
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+-   [Features](#features)
+-   [Screenshots](#screenshots)
+-   [Implementation](#implementation)
+-   [What I Learned](#what-i-learned)
+-   [Future Improvements](#future-improvements)
+-   [References](#references)
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+---
 
-## Sharing your solution
+## Features
 
-There are multiple places you can share your solution:
+Users can:
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+-   Enter their email and submit the form
+-   See a success screen when a valid email is submitted
+-   See an error message if the email is empty or invalid
+-   View responsive design on different screen sizes
+-   Experience hover and focus states on interactive elements
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+---
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+## Screenshots
 
-## Got feedback for us?
+![Screenshot 1](./completed/Normal.png)
+![Screenshot 2](./completed/Error.png)
+![Screenshot 3](./completed/Suscess.png)
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+---
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+## Implementation
 
-**Have fun building!** 🚀
+### Built With:
+
+-   Vanilla HTML + CSS (modular structure)
+-   CSS custom properties (variables)
+-   `insertAdjacentHTML()` for injecting DOM elements
+-   Regular expression for email validation
+-   CSS animation for jelly-like pop-up effect
+
+---
+
+## What I Learned
+
+-   ✅ **Email validation**
+    Used regex `/^[^\s@]+@[^\s@]+\.[^\s@]+$/` to validate the format.
+
+-   ✅ **Prevent duplicate error messages**
+    Checked for existing `.error-msg` before appending.
+
+-   ✅ **Dynamic placeholder color**
+    Controlled by `.red-placeholder::placeholder`.
+
+-   ✅ **Jelly popup animation**
+    Created using `@keyframes pop`.
+
+```js
+const isCorrectEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value);
+if (!isCorrectEmail && !document.querySelector(".error-msg")) {
+    const errorHtml = `<p class="card-label-text error-msg">Please provide a valid email address.</p>`;
+    labelBox.insertAdjacentHTML("beforeend", errorHtml);
+}
+```
+
+---
+
+## Future Improvements
+
+-   Modularize validation logic
+-   Add keyboard (Enter key) support
+-   Support reduced motion using `prefers-reduced-motion`
+-   Extend for multi-field or multi-step forms
+
+---
+
+## References
+
+-   [MDN - insertAdjacentHTML()](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+-   [Regex for Email Validation](https://regexr.com/)
+-   [CSS ::placeholder Styling](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder)
+
+---

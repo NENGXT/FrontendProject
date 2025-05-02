@@ -8,7 +8,12 @@
     line-height: 1.5;
 }
 
+.red-placeholder::placeholder {
+    color: var(--color-red);
+}
+
 .card-submit {
+    width: 100%;
     margin-top: 1rem;
     padding: 1rem;
     border-radius: 0.6rem;
@@ -27,4 +32,34 @@
 
 .card-submit:active {
     background-color: var(--color-blue-800);
+}
+
+.card-susceess-box {
+    display: block;
+    max-width: 25rem;
+    height: 25rem;
+    background-color: var(--color-white);
+    border-radius: 2rem;
+    padding: 3rem;
+    animation: pop 0.5s ease-in-out;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    90% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

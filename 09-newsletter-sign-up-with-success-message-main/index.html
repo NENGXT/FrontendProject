@@ -46,7 +46,11 @@
                                 alt="icon" />And much more!
                         </li>
                     </ul>
-                    <label for="email" class="card-label">Email address</label>
+                    <div class="card-label-box">
+                        <label for="email" class="card-label"
+                            >Email address</label
+                        >
+                    </div>
                     <input
                         type="email"
                         class="card-email"
@@ -66,6 +70,27 @@
                         alt="desktop-illustration" />
                 </div>
             </section>
+            <section class="card-susceess susceess-hidden">
+                <div class="card-susceess-box">
+                    <img
+                        class="card-icon-success"
+                        src="./assets/images/icon-success.svg"
+                        alt="icon-success" />
+                    <h1 class="card-title card-title-success">
+                        Thanks for subscribing!
+                    </h1>
+                    <p class="card-text card-text-success">
+                        A confirmation email has been sent to
+                        <strong>ash@loremcompany.com</strong>. Please open it
+                        and click the button inside to confirm your
+                        subscription.
+                    </p>
+                    <button class="card-submit card-submit-dissmiss">
+                        Dismiss message
+                    </button>
+                </div>
+            </section>
         </main>
+        <script src="./script.js"></script>
     </body>
 </html>

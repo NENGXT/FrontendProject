@@ -24,6 +24,10 @@ li {
     height: 1rem;
 }
 
+.card-icon-success {
+    height: 3rem;
+}
+
 .card-right {
     padding: 2rem;
 }
@@ -35,4 +39,14 @@ li {
 
 .card-illustration-desktop {
     width: 100%;
+}
+
+.card-label-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-susceess {
+    position: absolute;
 }
